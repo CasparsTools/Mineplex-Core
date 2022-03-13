@@ -81,7 +81,7 @@ function gwenAlert(p: player , r: text) :: number:
 on load:
 	if file "plugins/Mineplex-Core-Remake/config.yml" doesn't exists:
 		configPopulate(1)
-#	set {mineplex.config.servername} to colored value "servername" get of "plugins/Mineplex-Core-Remake/config.yml"
+	set {mineplex.config.servername} to colored value "servername" get of "plugins/Mineplex-Core-Remake/config.yml"
 	configRefresh(1)
 	wait 1 second
 	if {mineplex.config.config} is "{@configver}":
@@ -1310,9 +1310,9 @@ command /gadget:
 			set {mineplex.gadget.enabled} to true
 			broadcast "&f&lGadgets/Mounts are now &a&lEnabled"
 
-#command /chestmeup:
-#	trigger:
-#		give player chest named "&aCosmetic Menu"
+command /chestmeup:
+	trigger:
+		give player chest named "&aCosmetic Menu"
 
 command /s [<text>]:
 	permission: mineplex.mod
@@ -1350,8 +1350,8 @@ command /gm [<player>]:
 				set the arg-1's gamemode to survival
 				send "&9Game Mode> &7%arg-1% Creative Mode: &cFalse"
 
-command /message [<player>] [<text>]:
-	aliases: /tell, /m, /w
+command /emessage [<player>] [<text>]:
+	aliases: /tell, /em, /w
 	trigger:
 		if {mineplex.disguise.%player%} is set:
 			set {_p} to {mineplex.disguise.%player%}
@@ -1467,8 +1467,8 @@ command /news [<string>] [<string>] [<string>]:
 				send "&6/news set ## <newsEntry> &7Updates specified (numbered) news entry string from database. &cAdmin"
 				send "&c*Please Note: &7Updates to server news entries from the database are on a 4 minute cycle! &cAdmin"
 
-command /r [<text>]:
-	aliases: /reply
+command /er [<text>]:
+	aliases: /ereply
 	trigger:
 		if {mineplex.disguise.%player%} is set:
 			set {_p} to {mineplex.disguise.%player%}
